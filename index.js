@@ -137,7 +137,7 @@ function getMatchingCatsArray() {
   
 }
 
-
+let singleCat = []
 
 
 function getSingleCatObject() {
@@ -147,12 +147,18 @@ function getSingleCatObject() {
 
     
     if (catsArray.length === 1){
+        singleCat = catsArray[0]
+
         console.log(catsArray[0])
+
+
 
 
     }
     else {
         const randomNumber = Math.floor(Math.random() * catsArray.length)
+        singleCat = catsArray[randomNumber]
+        
         console.log(catsArray[randomNumber])
 
 
@@ -172,7 +178,8 @@ function renderCat(){
         `
         <img 
         class="cat-img" 
-        src="./images/${catObject.image}"
+        src="./images/${singleCat.image}"
+        alt="${singleCat.alt}"
         >
         `
     memeModal.style.display = 'flex'
